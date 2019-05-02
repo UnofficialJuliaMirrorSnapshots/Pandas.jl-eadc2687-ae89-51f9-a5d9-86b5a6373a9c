@@ -1,0 +1,20 @@
+# Documentation: http://docs.travis-ci.com/user/languages/julia/
+language: julia
+os:
+  - linux
+dist: xenial
+julia:
+  - 0.7
+  - 1.0
+notifications:
+  email: false
+addons:
+  apt:
+    packages:
+      - python3
+      - python3-pip
+before_install:
+  - pip3 install --user --upgrade pip
+  - pip --version
+  - pip install --user pandas
+  - pip install --user tables
